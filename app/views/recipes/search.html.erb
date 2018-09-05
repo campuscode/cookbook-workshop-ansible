@@ -1,0 +1,4 @@
+<h1>Resultado da busca por: <%= params[:search] %></h1>
+<% @recipes.each do |recipe| %>
+  <%= render partial: 'recipe_short', locals: {recipe: recipe} %>
+<% end %>
