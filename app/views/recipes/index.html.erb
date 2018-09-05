@@ -14,3 +14,9 @@
     <%= render partial: 'recipe_short', locals: {recipe: recipe} %>
   <% end %>
 </div>
+
+<h1>Cozinhas</h1>
+<% @cuisines.each do |cuisine| %>
+  <h2><%= link_to cuisine.name, cuisine %></h2>
+<% end %>
+

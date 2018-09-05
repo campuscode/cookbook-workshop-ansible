@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.where(featured: false)
     @featured_recipes = Recipe.where(featured: true)
+    @cuisines = Cuisine.all
   end
 
   def show
