@@ -36,10 +36,12 @@ ActiveRecord::Schema.define(version: 2018_09_03_200953) do
     t.text "ingredients"
     t.text "cook_method"
     t.boolean "featured", default: false
-    t.integer "recipe_type_id"
-    t.integer "cuisine_id"
+    t.bigint "recipe_type_id"
+    t.bigint "cuisine_id"
     t.index ["cuisine_id"], name: "index_recipes_on_cuisine_id"
     t.index ["recipe_type_id"], name: "index_recipes_on_recipe_type_id"
   end
 
+  add_foreign_key "recipes", "cuisines"
+  add_foreign_key "recipes", "recipe_types"
 end
